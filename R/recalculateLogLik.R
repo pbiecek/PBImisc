@@ -12,12 +12,12 @@
        Zt <- getME(model, "Zt")
        X <- getME(model, "X")
        y <- getME(model, "y")
-       V1 <- Matrix:::t(Zt) %*% Matrix(D) %*% Zt
+       V1 <- Matrix::t(Zt) %*% Matrix(D) %*% Zt
        V2 <- sig2 * Diagonal(ncol(Zt))
        V <- V1 + V2
        res <- y - X %*% fixef(model)
        z <- t(res) %*% solve(V,res)
-       return (as.numeric(- Matrix:::determinant(V,TRUE)$modulus/2 - ncol(Zt)*log(2*pi)/2 - z/2))
+       return (as.numeric(- Matrix::determinant(V,TRUE)$modulus/2 - ncol(Zt)*log(2*pi)/2 - z/2))
      } else if (class(model) == 'mer') {
        sig2 <- attr(vcor, "sc")
        D = matrix(0, max(model@Gp), max(model@Gp))
@@ -27,12 +27,12 @@
          inds <- (model@Gp[i]+1):model@Gp[i+1]
          D[inds, inds] <- Dpart
        }
-       V1 <- Matrix:::t(model@Zt) %*% Matrix(D) %*% model@Zt
+       V1 <- Matrix::t(model@Zt) %*% Matrix(D) %*% model@Zt
        V2 <- sig2 * Diagonal(ncol(model@Zt))
        V <- V1 + V2
        res <- model@y - model@X %*% model@fixef
        z <- t(res) %*% solve(V,res)
-       return(as.numeric(- Matrix:::determinant(V,TRUE)$modulus/2 - ncol(model@Zt)*log(2*pi)/2 - z/2))
+       return(as.numeric(- Matrix::determinant(V,TRUE)$modulus/2 - ncol(model@Zt)*log(2*pi)/2 - z/2))
      }  else stop("model should be an object of the class mer or lmerMod")
 }
 

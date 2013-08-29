@@ -1,7 +1,7 @@
 \name{boxplotpp}
 \alias{boxplotpp}
-\alias{boxplot.in.time}
-\title{ boxplot plus plus }
+\alias{boxplotInTime}
+\title{boxplot plus plus }
 \description{
 boxplotpp
 }
@@ -9,7 +9,7 @@ boxplotpp
 boxplotpp(x, xname=seq(1:ncol(x)), utitle="", addLines=TRUE, 
            color = ifelse(addLines, "white","lightgrey"), ...) 
 
-boxplot.in.time(x, xname, additional=T, color = ifelse(additional, 
+boxplotInTime(x, xname, additional=T, color = ifelse(additional, 
      "white","lightgrey"), main="", ylim=range(unlist(x),na.rm=T), ..., 
      points = dim(x)[2], at = 1:points)
 }
