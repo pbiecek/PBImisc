@@ -1,31 +1,27 @@
 \name{score.cardiovascular}
 \alias{score.cardiovascular}
 \description{
-boxplotpp
+Calculation of risk SCORE for use in the clinical management of cardiovascular risk in European.
 }
 \usage{
-boxplotpp(x, xname=seq(1:ncol(x)), utitle="", addLines=TRUE, 
-           color = ifelse(addLines, "white","lightgrey"), ...) 
+calculateScoreEur(age, cholesterol, SBP, currentSmoker, 
+  gender = "Men", risk = "Low risk")
 
-boxplotInTime(x, xname, additional=T, color = ifelse(additional, 
-     "white","lightgrey"), main="", ylim=range(unlist(x),na.rm=T), ..., 
-     points = dim(x)[2], at = 1:points)
 }
 \arguments{
-  \item{x}{  TODO }
-  \item{xname}{ TODO }
-  \item{utitle}{ TODO }
-  \item{addLines}{ TODO }
-  \item{color}{ TODO }
-  \item{additional}{ TODO }
-  \item{main}{ TODO }
-  \item{points}{ TODO }
-  \item{at}{ TODO }
-  \item{ylim}{ TODO }
-  \item{...}{ TODO }
+  \item{age}{  age in years }
+  \item{cholesterol}{ in mmol/L }
+  \item{SBP}{ Systolic blood pressure in mmHg }
+  \item{currentSmoker}{ the current smoker status,  1 for current smokers, 0 for non smokers}
+  \item{gender}{ "Men" or "Women" }
+  \item{risk}{ is it "Low risk" or "High risk" group}
 }
 \details{
-TODO
+Calculation of SCORE based on the paper
+
+,,Estimation of ten-year risk of fatal cardiovascular disease in Europe: the SCORE project''
+R.M. Conroy et. al.
+Eur Heart J (2003) 24 (11): 987-1003. doi: 10.1016/S0195-668X(03)00114-3
 }
 \value{
 TODO
@@ -34,4 +30,4 @@ TODO
 \examples{
 #TODO
 }
-\keyword{boxplotpp}
+\keyword{score.cardiovascular}
