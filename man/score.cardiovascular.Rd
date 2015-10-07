@@ -1,5 +1,8 @@
 \name{score.cardiovascular}
 \alias{score.cardiovascular}
+\title{
+SCORE for Cardiovascular Risk
+}
 \description{
 Calculation of risk SCORE for use in the clinical management of cardiovascular risk in European.
 }
