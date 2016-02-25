@@ -1,5 +1,6 @@
 \name{score.cardiovascular}
 \alias{score.cardiovascular}
+\alias{calculateScoreEur}
 \title{
 SCORE for Cardiovascular Risk
 }
@@ -26,11 +27,5 @@ Calculation of SCORE based on the paper
 R.M. Conroy et. al.
 Eur Heart J (2003) 24 (11): 987-1003. doi: 10.1016/S0195-668X(03)00114-3
 }
-\value{
-TODO
-}
 \author{ Przemyslaw Biecek}
-\examples{
-#TODO
-}
 \keyword{score.cardiovascular}
