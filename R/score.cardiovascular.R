@@ -9,10 +9,10 @@ calculateRisk <- function(age, cholesterol, SBP, currentSmoker, betaSmoker, beta
   Sage0 = exp(-exp(coefs["alpha"])*(age - 20)^coefs["p"])
   Sage10 = exp(-exp(coefs["alpha"])*(age - 10)^coefs["p"])
   # step 2 weights
-  w = betaChol*(cholesterol - 6) + betaSBP*(SBP - 120) + betaSmoker
+  w = betaChol*(cholesterol - 6) + betaSBP*(SBP - 120) + betaSmoker*currentSmoker
   # step 3 weighted risks
-  Sage   = (Sage0)^exp(coefs["w"]) 
-  Sage1 = (Sage10)^exp(coefs["w"]) 
+  Sage   = (Sage0)^exp(w) 
+  Sage1 = (Sage10)^exp(w) 
   # step 4 - 10 years survival
   S10 = Sage1/Sage
   # step 5 - endpoint
